@@ -1,0 +1,170 @@
+<!doctype html>
+
+<html lang="eS">
+
+<head>
+  <meta charset="utf-8">
+  <title> Accessibility exercise </title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+</head>
+
+<body>
+  <header>
+    <h1> Accessibility exercises </h1>
+  </header>
+  <main>
+    <h2> ARIA exercise 1 (before) </h2>
+
+    <form>
+      <fieldset>
+        <legend> Contact us </legend>
+
+        <div class="form-control">
+          <label for="name">
+            <span class="material-symbols-outlined" aria-hidden="true">person</span>
+            <span class="sr-only">Name</span>
+          </label>
+          <input type="text" id="name" />
+        </div>
+
+        <div class="form-control">
+          <label for="email">
+            <span class="material-symbols-outlined" aria-hidden="true">contact_mail</span>
+            <span class="sr-only">Email</span>
+          </label>
+          <input type="text" id="email" />
+        </div>
+
+        <div class="form-control">
+          <label for="message">
+            <span class="material-symbols-outlined" aria-hidden="true">chat_bubble</span>
+            <span class="sr-only">Message</span>
+          </label>
+          <textarea id="message" cols="30" rows="10"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" aria-label="Send">
+          <span class="material-symbols-outlined" aria-hidden="true">send</span>
+        </button>
+      </fieldset>
+    </form>
+    <img alt="Phone" src="https://img.icons8.com/small/2x/phone.png" /> +52 (333) 45 34 567
+  </main>
+</body>
+
+</html>
+
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f8;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Header */
+  h1 {
+    color: #2a9d8f;
+    margin-bottom: 20px;
+  }
+
+  /* Form container */
+  form {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+  }
+
+  /* Fieldset and legend */
+  fieldset {
+    border: 2px solid #2a9d8f;
+    border-radius: 8px;
+    padding: 20px;
+  }
+
+  legend {
+    font-weight: bold;
+    color: #264653;
+    padding: 0 10px;
+  }
+
+  /* Form controls */
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  label {
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #264653;
+  }
+
+  /* Inputs and textarea */
+  input[type="text"],
+  textarea {
+    padding: 10px;
+    border: 2px solid #757575;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  input[type="text"]:focus,
+  textarea:focus {
+    border-color: #1E7167;
+    box-shadow: 0 0 5px rgba(42, 157, 143, 0.3);
+    outline: none;
+  }
+
+  /* Submit button */
+  button[type="submit"] {
+    background-color: #20796F;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #21867a;
+  }
+
+  /* Contact info */
+  img {
+    vertical-align: middle;
+    width: 20px;
+    margin-right: 8px;
+    margin-top: 25px;
+  }
+
+  body>img+text,
+  body>img+span,
+  body>img+div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+</style>
